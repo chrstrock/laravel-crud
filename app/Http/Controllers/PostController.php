@@ -15,6 +15,7 @@ class PostController extends Controller
     public function list()
     {
         $posts = Post::orderByDesc('created_at')->with('user')->get();
+
         return view ('list', [
             'posts' => $posts
         ]);
@@ -40,7 +41,7 @@ class PostController extends Controller
 
         Post::create($data);
 
-        return redirect('/');
+        return redirect('/list');
     }
 
     public function edit(Post $post)
@@ -59,7 +60,7 @@ class PostController extends Controller
 
         $post->update($data);
 
-        return redirect('/');
+        return redirect('/list');
     }
 
     
@@ -68,6 +69,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect('/');
+        return redirect('/list');
     }
 }

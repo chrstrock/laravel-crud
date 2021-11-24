@@ -28,5 +28,11 @@ Route::post('/create', 'PostController@store');
 //Create route
 Route::get('/create', 'PostController@create');
 
+//login route
+Route::post('/login', 'AuthController@login');
+
+Route::get('/', 'AuthController@show');
+
+
 //list route
-Route::get('/', 'PostController@list');
+Route::get('/list', 'PostController@list');
