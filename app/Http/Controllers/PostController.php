@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -14,11 +15,11 @@ class PostController extends Controller
      */
     public function list()
     {
-        $posts = Post::orderByDesc('created_at')->with('user')->get();
-
+        $user = Auth::user();
+        $posts = Post::where('user_id','=', Auth::id())->get();
+        
         return view ('list', [
-            'posts' => $posts,
-            'user' => auth()->user()
+            'posts' => $posts
 
         ]);
     }
@@ -27,10 +28,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+        $user = Auth::user();
         
         return view('create', [
-            'users' => $users
+            'user' => $user
         ]);
     }
 

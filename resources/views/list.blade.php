@@ -36,7 +36,7 @@
                 <td>
                     <div class="w-1/5 flex">
                         <a href="{{url('/create')}}" class="rounded-md bg-green-500 text-white p-2">Create</a>
-                        <a href="{{url('/posts/'.$post->id)}}" class="rounded-md bg-indigo-500 text-white p-2">Update</a>
+                        <a href="{{url('/posts/'.$post->id)}}" class="ml-2 rounded-md bg-indigo-500 text-white p-2">Update</a>
                         <form action="{{url('/posts/'.$post->id)}}" method="POST" class="p-2 ml-2 rounded-md bg-red-500 text-white">
                             @method('DELETE')
                             @csrf
