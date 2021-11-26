@@ -31,8 +31,10 @@ Route::get('/create', 'PostController@create');
 //login route
 Route::post('/login', 'AuthController@login');
 
-Route::get('/', 'AuthController@show');
+Route::get('/logout', 'AuthController@logout');
+
+Route::get('/', 'AuthController@show')->name('login');
 
 
 //list route
-Route::get('/list', 'PostController@list');
+Route::get('/list', 'PostController@list')->middleware('auth');
