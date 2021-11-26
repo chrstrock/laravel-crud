@@ -7,6 +7,10 @@
         <title>CRUD Login</title>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     </head>
+    <h1>Welcome to the CRUD app!</h1>
+    <br>
+    <h2>Please login using your email and password!<h2>
+        <br>
     <body class="m-10">
         @if($errors->any())
             <div class="bg-red-200 p-3">

@@ -17,7 +17,9 @@ class PostController extends Controller
         $posts = Post::orderByDesc('created_at')->with('user')->get();
 
         return view ('list', [
-            'posts' => $posts
+            'posts' => $posts,
+            'user' => auth()->user()
+
         ]);
     }
     /**

@@ -25,7 +25,7 @@
             <tr>
                 <th>User Name</th>
                 <th>Post Content</th>
-                <th>Update / Delete</th>
+                <th>Create/ Update / Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -35,6 +35,7 @@
                 <td><p class="w-2/5">{{ $post->content }}</p></td>
                 <td>
                     <div class="w-1/5 flex">
+                        <a href="{{url('/create')}}" class="rounded-md bg-green-500 text-white p-2">Create</a>
                         <a href="{{url('/posts/'.$post->id)}}" class="rounded-md bg-indigo-500 text-white p-2">Update</a>
                         <form action="{{url('/posts/'.$post->id)}}" method="POST" class="p-2 ml-2 rounded-md bg-red-500 text-white">
                             @method('DELETE')
