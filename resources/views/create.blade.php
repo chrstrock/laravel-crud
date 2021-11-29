@@ -15,9 +15,9 @@
 
         
         <select name="user_id" class="block border border-gray-500 w-80 mb-3 p-2">
-            @foreach ($users as $user)
+           
                 <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
+            
         </select>
 
         <textarea name="content" rows="3" class="block border border-gray-500 w-80 mb-3"></textarea>
