@@ -20,6 +20,9 @@
 </head>
 <body class="antialised m-10">
     <h1 class="text-3xl font-bold mb-10">Posts</h1>
+    <br>
+    <a href="{{url('/create')}}" class="rounded-md bg-green-500 text-white p-2">Create</a>
+    <a href="{{url('/logout')}}" class="ml-2 rounded-md bg-indigo-500 text-white p-2">Log Out</a>
     <table id="post_table" class="display">
         <thead>
             <tr>
@@ -35,7 +38,7 @@
                 <td><p class="w-2/5">{{ $post->content }}</p></td>
                 <td>
                     <div class="w-1/5 flex">
-                        <a href="{{url('/create')}}" class="rounded-md bg-green-500 text-white p-2">Create</a>
+                        
                         <a href="{{url('/posts/'.$post->id)}}" class="ml-2 rounded-md bg-indigo-500 text-white p-2">Update</a>
                         <form action="{{url('/posts/'.$post->id)}}" method="POST" class="p-2 ml-2 rounded-md bg-red-500 text-white">
                             @method('DELETE')
