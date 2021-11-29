@@ -33,8 +33,11 @@ Route::post('/login', 'AuthController@login');
 
 Route::get('/logout', 'AuthController@logout');
 
-Route::get('/', 'AuthController@show')->name('login');
+// Route::get('/', 'AuthController@show')->name('login');
 
 
 //list route
 Route::get('/list', 'PostController@list')->middleware('auth');
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
