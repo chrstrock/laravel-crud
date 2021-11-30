@@ -16,7 +16,7 @@
     composer install --ignore-platform-reqs
     4. Set proper permissions using the following command:  sudo chown -R $USER: .
     5. Run the server with sail:  vendor/bin/sail up -d
-    6. Copy the env vile cp .env.example .env
+    6. Copy the env file cp .env.example .env
     7. Change the entry for "DB_HOST" to "mysql" from "127.0.0.1"
     8. Generate the app key with the command:  vendor/bin/sail artisan key:generate
     9. Seed the database with the command:  vendor/bin/sail artisan migrate:fresh --seed
